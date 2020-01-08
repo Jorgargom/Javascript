@@ -1,39 +1,23 @@
-let elemento;
+// getElementbyId
 
-elemento = document;
-elemento = document.all;
-elemento = document.all[10];
-elemento = document.head;
-elemento = document.body;
-elemento = document.domain;
-elemento = document.URL;
-elemento = document.characterSet;
-elemento = document.forms;
-elemento = document.forms[0];
-elemento = document.forms[0].id;
-elemento = document.forms[0].className;
-elemento = document.forms[0].classList;
+let encabezado;
 
-elemento = document.images;
-elemento = document.images[2];
-elemento = document.images[2].src;
-elemento = document.images[2].getAttribute('src');
+encabezado = document.getElementById('encabezado');
 
-elemento = document.scripts;
+encabezado.style.background = '#333';
+encabezado.style.color = 'white';
+encabezado.style.padding = '20px';
 
 
-elemento = document.images;
+
+// Cambiar el texto
+
+encabezado.innerText = 'Los mejores Cursos';
 
 
-let imagenes = document.images;
 
-let imagenesArr = Array.from(imagenes);
 
-imagenesArr.forEach(function (imagen) {
-   console.log(imagen); 
-});
-
-console.log(imagenesArr);
+console.log(encabezado);
 
 
 
