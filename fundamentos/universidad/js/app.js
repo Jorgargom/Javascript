@@ -1,10 +1,8 @@
 
-const links = document.getElementsByTagName('a');
+const enlaces = document.querySelectorAll('#principal a:nth-child(odd)');
 
-let enlaces = Array.from(links);
-
-enlaces.forEach(function (enlace) {
-    console.log(enlace.textContent);
+enlaces.forEach(function (impares) {
+    impares.style.backgroundColor = 'red';
 });
 
 
