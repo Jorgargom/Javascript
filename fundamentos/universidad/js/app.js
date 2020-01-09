@@ -1,9 +1,21 @@
 
-const enlaces = document.querySelectorAll('#principal a:nth-child(odd)');
+const cursos = document.querySelectorAll('.card');
 
-enlaces.forEach(function (impares) {
-    impares.style.backgroundColor = 'red';
-});
+console.log(cursos[0].lastElementChild);
+console.log(cursos[0].firstElementChild);
+console.log(cursos[0].childElementCount);
 
 
-console.log(enlaces);
+
+/* 
+
+nodeType
+-----------
+1 = Elementos
+2 = Atributos
+3 = Text Node
+8 = comentarios
+9 = documentos
+10 = doctyoe 
+
+*/
