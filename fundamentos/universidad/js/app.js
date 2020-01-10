@@ -23,3 +23,12 @@ console.log(anterior);
 
 console.log(nuevoEncabezado);
 
+
+const enlaces = document.querySelectorAll('.enlace');
+const navegacion = document.querySelector('#principal');
+
+enlaces[0].remove();
+
+console.log(enlaces);
+console.log(navegacion);
+
