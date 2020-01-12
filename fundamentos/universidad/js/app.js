@@ -1,22 +1,27 @@
-const buscador = document.querySelector('#buscador');
+// Event Bubling
 
-//busqueda.addEventListener('keydown', obtenerEvento);
-//busqueda.addEventListener('keyup', obtenerEvento);
-//buscador.addEventListener('keypress', obtenerEvento);
-//buscador.addEventListener('focus', obtenerEvento);
-//buscador.addEventListener('blur', obtenerEvento);
-//buscador.addEventListener('cut', obtenerEvento);
-//buscador.addEventListener('copy', obtenerEvento);
-//buscador.addEventListener('paste', obtenerEvento);
-//buscador.addEventListener('input', obtenerEvento);
-buscador.addEventListener('change', obtenerEvento);
+const card = document.querySelector('.card');
+const infoCurso = document.querySelector('.info-card')
+const agregarCarrito = document.querySelector('.agregar-carrito')
 
+card.addEventListener('click', function (e) {
+ 
+    console.log('Click en card');
+    e.stopPropagation();
+});
 
-
-function obtenerEvento(e) {
+infoCurso.addEventListener('click', function (e) {
+ 
+    console.log('Click en infoCurso');
+    e.stopPropagation();
     
-    //document.querySelector('#encabezado').innerText = buscador.value;
-    console.log(`EVENTO: ${e.type}`);
-        
-}
+});
+
+agregarCarrito.addEventListener('click', function (e) {
+ 
+    console.log('Click en agregarCarrito');
+    e.stopPropagation();
+    
+});
+
 
