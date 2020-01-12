@@ -1,21 +1,11 @@
-// Delegation
+// Agregar a local y session storage y eliminar en local storage
 
-document.body.addEventListener('click', eliminarElemento);
+localStorage.setItem('nombre', 'Jorge');
 
-function eliminarElemento (e) {
-    e.preventDefault();
+sessionStorage.setItem('nombre', 'Jorge');
 
-    if (e.target.classList.contains('borrar-curso')) {
-        console.log(e.target.parentElement.parentElement.remove());
-        
-    } 
+// Eliminar el local storage
 
-    if (e.target.classList.contains('agregar-carrito')) {
-        console.log('Curso agregado');
-        
-        
-    } 
-    
-}
+localStorage.removeItem('nombre');
 
-
+localStorage.clear();
