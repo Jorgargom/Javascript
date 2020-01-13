@@ -62,3 +62,27 @@ function borrarTweet(e) {
           borrarTweetLocalStorage(e.target.parentElement.innerText);
      } 
 }
+
+
+// Agrega tweet a local storage
+function agregarTweetLocalStorage(tweet) {
+    let tweets;
+    tweets = obtenerTweetsLocalStorage();
+    // Añadir el nuevo tweet
+    tweets.push(tweet);
+    // Convertir de string a arreglo para local storage
+    localStorage.setItem('tweets', JSON.stringify(tweets) );
+}
+
+
+// Comprobar que haya elementos en localstorage, retorna un arreglo
+function obtenerTweetsLocalStorage() {
+    let tweets;
+    // Revisamos los valoes de local storage
+    if(localStorage.getItem('tweets') === null) {
+         tweets = []; 
+    } else {
+         tweets = JSON.parse(localStorage.getItem('tweets') );
+    }
+    return tweets;
+}
