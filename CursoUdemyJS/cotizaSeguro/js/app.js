@@ -34,8 +34,14 @@ formulario.addEventListener('submit', function (e) {
     
     // Crear instancia de interfaz
 
+    const interfaz = new Interfaz();
 
-    
+    if (marcaSeleccionada === '' || anioSeleccionado == '' || tipo === '') {
+        console.log("faltan datos");
+    } else {
+        console.log("ok");
+    }
+
     console.log(tipo);
     
     console.log(anioSeleccionado);
