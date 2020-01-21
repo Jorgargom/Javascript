@@ -1,5 +1,20 @@
+// Constructor
+
+function Seguro(marca, anio, tipo) {
+    this.marca = marca;
+    this.anio = anio;
+    this.tipo = tipo;
+}
 
 
+// Todo lo que se muestra
+
+function Interfaz() {
+    
+}
+
+
+// EventListeners
 
 
 
