@@ -16,7 +16,13 @@ function Interfaz() {
 
 // EventListeners
 
+const formulario = document.getElementById('cotizar-seguro');
 
+formulario.addEventListener('submit', function (e) {
+    e.preventDefault();
+    console.log("Presionado");
+    
+})
 
 // Creo input con los ultimos 20 anios
 const max = new Date().getFullYear(),
