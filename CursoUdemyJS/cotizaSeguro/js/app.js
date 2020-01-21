@@ -20,6 +20,27 @@ const formulario = document.getElementById('cotizar-seguro');
 
 formulario.addEventListener('submit', function (e) {
     e.preventDefault();
+
+    // Leer la marca seleccionada del select
+    const marca = document.getElementById('marca');
+    const marcaSeleccionada = marca.options[marca.selectedIndex].value;
+
+    // Leer el año seleccionado del select
+    const anio = document.getElementById('anio');
+    const anioSeleccionado = anio.options[anio.selectedIndex].value;
+   
+    // Leer el valor del radio button
+    const tipo = document.querySelector('input[name="tipo"]:checked').value;
+    
+    // Crear instancia de interfaz
+
+
+    
+    console.log(tipo);
+    
+    console.log(anioSeleccionado);
+
+    console.log(marcaSeleccionada);
     console.log("Presionado");
     
 })
