@@ -13,6 +13,28 @@ function Interfaz() {
     
 }
 
+// Mensaje que se imprime en el formulario
+
+Interfaz.prototype.mostrarError = function (mensaje, tipo) {
+    const div = document.createElement('div');
+
+    if(tipo === 'error') {
+        div.classList.add('mensaje','error')
+    } else {
+        div.classList.add('mensaje','correcto')
+
+    }
+
+    div.innerHTML = `${mensaje}`;
+    formulario.insertBefore(div, document.querySelector('.form-group'));
+    
+    setTimeout(() => {
+        document.querySelector('.mensaje').remove();                
+    }, 3000);
+    
+}
+
+
 
 // EventListeners
 
@@ -37,7 +59,7 @@ formulario.addEventListener('submit', function (e) {
     const interfaz = new Interfaz();
 
     if (marcaSeleccionada === '' || anioSeleccionado == '' || tipo === '') {
-        console.log("faltan datos");
+        interfaz.mostrarError('Faltan datos, revisar el formulario de nuevo')
     } else {
         console.log("ok");
     }
