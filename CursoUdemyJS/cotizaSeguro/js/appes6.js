@@ -100,3 +100,58 @@ class Interfaz{
     }
     
 }
+
+
+
+// EventListener
+const formulario = document.getElementById('cotizar-seguro');
+
+formulario.addEventListener('submit', function(e) {
+     e.preventDefault();
+
+     // leer la marca seleccionada del select
+     const marca = document.getElementById('marca');
+     const marcaSeleccioanda = marca.options[marca.selectedIndex].value;
+
+     // leer el año seleccionado del <select>
+     const anio = document.getElementById('anio');
+     const anioSeleccionado = anio.options[anio.selectedIndex].value;
+
+     // lee el valor del radio button
+     const tipo = document.querySelector('input[name="tipo"]:checked').value;
+
+     // Crear instancia de Interfaz
+     const interfaz = new Interfaz();
+
+     // Revisamos que los campos no esten vacios
+     if(marcaSeleccioanda === '' || anioSeleccionado === '' || tipo === '') {
+          // Interfaz imprimiendo un error
+          interfaz.mostrarMensaje('Faltan datos, revisar el formulario y prueba de nuevo', 'error');
+     } else {
+          // Limpiar resultados anteriores
+          const resultados = document.querySelector('#resultado div');
+          if(resultados != null) {
+               resultados.remove();
+          }
+
+          // Instanciar seguro y mostrar interfaz
+          const seguro = new Seguro(marcaSeleccioanda, anioSeleccionado, tipo);
+          // Cotizar el seguro
+          const cantidad = seguro.cotizarSeguro();
+          // Mostrar el resultado
+          interfaz.mostrarResultado(seguro, cantidad);
+          interfaz.mostrarMensaje('Cotizando...', 'exito');
+     }
+
+});
+
+const max = new Date().getFullYear(),
+      min = max - 20;
+
+const selectAnios = document.getElementById('anio');
+for(let i = max; i > min; i--) {
+     let option = document.createElement('option');
+     option.value = i;
+     option.innerHTML = i;
+     selectAnios.appendChild(option);
+}
