@@ -11,9 +11,8 @@ let i = 0;
 // }
 
 console.warn('While')
-// undefined
-// null
-// false
+
+
 while( carros[i] ) {
     if ( i === 1 ){
         // break;
