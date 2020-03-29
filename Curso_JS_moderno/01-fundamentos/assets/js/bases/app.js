@@ -21,4 +21,4 @@ c = 'Hola de nuevo';
 
 // console.table({a, b, c, d, x });
 
-let miNuevoNombre = 'Jorge García';
+let miNuevoNombre = 'Fernando Herrera';
