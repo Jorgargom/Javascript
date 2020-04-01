@@ -53,7 +53,9 @@ const pedirCarta = () => {
     return carta;
 }
 
-// pedirCarta();
+
+// Esta funcion da valor a las cartas
+
 const valorCarta = ( carta ) => {
 
     const valor = carta.substring(0, carta.length - 1);
