@@ -15,6 +15,9 @@ const tipos =       ['C','D','H','S']
 
 const especiales =  ['A','J','Q','K']
 
+let puntosJugador = 0,
+    puntosComputadora = 0;
+    
 // Referencias del HTML
 const btnPedir   = document.querySelector('#btnPedir');
 const btnDetener = document.querySelector('#btnDetener');
