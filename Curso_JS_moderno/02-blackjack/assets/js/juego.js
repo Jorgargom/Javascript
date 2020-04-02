@@ -63,3 +63,34 @@ const valorCarta = ( carta ) => {
             ( valor === 'A' ) ? 11 : 10
             : valor * 1;
 }
+
+
+// Eventos
+
+btnPedir.addEventListener('click', () => {
+
+    const carta = pedirCarta();
+    
+    puntosJugador = puntosJugador + valorCarta( carta );
+    puntosHTML[0].innerText = puntosJugador;
+    
+    // <img class="carta" src="assets/cartas/2C.png">
+    const imgCarta = document.createElement('img');
+    imgCarta.src = `assets/cartas/${ carta }.png`; //3H, JD
+    imgCarta.classList.add('carta');
+    divCartasJugador.append( imgCarta );
+
+    if ( puntosJugador > 21 ) {
+        console.warn('Lo siento mucho, perdiste');
+        btnPedir.disabled   = true;
+        btnDetener.disabled = true;
+        turnoComputadora( puntosJugador );
+
+    } else if ( puntosJugador === 21 ) {
+        console.warn('21, genial!');
+        btnPedir.disabled   = true;
+        btnDetener.disabled = true;
+        turnoComputadora( puntosJugador );
+    }
+
+});
