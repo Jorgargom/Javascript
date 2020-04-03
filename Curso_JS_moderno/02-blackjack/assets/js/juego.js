@@ -89,7 +89,7 @@ const turnoComputadora = ( puntosMinimos ) => {
         
         // <img class="carta" src="assets/cartas/2C.png">
         const imgCarta = document.createElement('img');
-        imgCarta.src = `assets/cartas/${ carta }.png`; //3H, JD
+        imgCarta.src = `assets/cartas/${ carta }.png`;
         imgCarta.classList.add('carta');
         divCartasComputadora.append( imgCarta );
 
@@ -141,5 +141,34 @@ btnPedir.addEventListener('click', () => {
         btnDetener.disabled = true;
         turnoComputadora( puntosJugador );
     }
+
+});
+
+
+
+btnDetener.addEventListener('click', () => {
+    btnPedir.disabled   = true;
+    btnDetener.disabled = true;
+
+    turnoComputadora( puntosJugador );
+});
+
+btnNuevo.addEventListener('click', () => {
+
+    console.clear();
+    deck = [];
+    deck = crearDeck();
+
+    puntosJugador     = 0;
+    puntosComputadora = 0;
+    
+    puntosHTML[0].innerText = 0;
+    puntosHTML[1].innerText = 0;
+
+    divCartasComputadora.innerHTML = '';
+    divCartasJugador.innerHTML = '';
+
+    btnPedir.disabled   = false;
+    btnDetener.disabled = false;
 
 });
