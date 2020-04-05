@@ -149,12 +149,6 @@ const miModulo = (() => {
         turnoComputadora( puntosJugadores[0] );
     });
 
-    // btnNuevo.addEventListener('click', () => {
-        
-    //     inicializarJuego();
-
-    // });
-
 
     return {
         nuevoJuego: inicializarJuego
